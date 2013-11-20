@@ -5,7 +5,7 @@ python:
     
 install: 
     - "python setup.py install"
-    - "pip install coveralls --use-mirrors"
+    - "pip install coveralls --use-mirrors -r requirements.txt"
 script: 
     - "coverage run --source=dyndnsc setup.py test"
     - "coverage xml -o shippable/codecoverage/coverage.xml"
