@@ -9,5 +9,5 @@ install:
 script: 
     - "coverage run --source=dyndnsc setup.py test"
     - "coverage xml -o shippable/codecoverage/coverage.xml"
-    - "nosetests dyndnsc/tests/updater --with-xunit --xunit-file=shippable/testresults/nosetests.xml"
+    - "nosetests dyndnsc/tests/updater/tests_afraid.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml"
 after_success: "coveralls"
