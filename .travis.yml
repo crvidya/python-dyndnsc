@@ -1,5 +1,5 @@
 language: python
-before_script: mkdir -p shippable/codecoverage
+before_script: mkdir -p shippable/codecoverage shippable/testresults
 python:
     - "2.6"
     
@@ -9,4 +9,5 @@ install:
 script: 
     - "coverage run --source=dyndnsc setup.py test"
     - "coverage xml -o shippable/codecoverage/coverage.xml"
+    - "nosetests dyndnsc setup.py test --with-xunit --xunit-file=shippable/testresults/nosetests.xml"
 after_success: "coveralls"
